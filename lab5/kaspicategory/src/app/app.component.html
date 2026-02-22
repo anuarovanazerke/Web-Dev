@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Online Store</h1>
+
+  <div class="categories-menu">
+    @for(category of categories; track category.id) {
+      <button 
+        (click)="selectCategory(category.id)"
+        class="category-btn"
+        [class.active]="selectedCategoryId === category.id">
+        {{category.name}}
+      </button>
+    }
+  </div>
+
+  @if (selectedCategoryId !== null) {
+    <app-product-list
+      [products]="selectedProducts"
+      (delete)="removeProductFromList($event)">
+    </app-product-list>
+  } @else {
+    <div class="welcome-prompt">
+      <p>Welcome to Kaspi online store!</p>
+    </div>
+  }
+</div>

@@ -1,0 +1,19 @@
+:host{
+  display:block;
+  width:100%
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 900px;
+    margin:0 auto;
+    background-color:  #f9f9f9;
+}
+app-product-item{
+  min-width:0;
+  overflow:hidden;
+  min-width:0;
+}
+  
